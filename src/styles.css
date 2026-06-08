@@ -966,8 +966,8 @@ input:focus {
     position: relative;
     display: flex;
     flex: auto;
-    left: 0px !important;
-    transform: translateX(10px) !important;
+    right: 0px !important;
+    transform: translateX(50px) !important;
     z-index: 4;
   }
 
