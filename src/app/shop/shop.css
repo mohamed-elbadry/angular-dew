@@ -1,0 +1,6 @@
+.our-product .card .product-img {
+  height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    position: relative;
+}

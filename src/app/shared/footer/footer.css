@@ -1,0 +1,16 @@
+/*========================
+        footer
+  ========================*/
+.footer {
+  padding-inline: 50px;
+}
+
+.footer a:hover {
+  transition: all 0.3s linear;
+  color: var(--color-sr) !important;
+}
+
+.footer .image-foot img {
+  max-width: 250px !important;
+}
+

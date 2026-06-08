@@ -1,0 +1,323 @@
+/*========================
+        landing
+  ========================*/
+.m-641 {
+  min-height: 641px;
+}
+.our-product .image {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/*========================
+        care
+  ========================*/
+
+/*========================
+        Products
+  ========================*/
+.progress-wrapper,
+.progress-bar-customer,
+.progress-wrapper-takedew,
+.progress-wrapper-reserch {
+  position: relative;
+  height: 10px;
+  width: 100%;
+  margin-top: 20px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.progress-bar,
+.progress-bar-customer,
+.progress-bar-takedew,
+.progress-bar-reserch {
+  width: 390px;
+  height: 10px;
+  background: #51565c;
+  border-radius: 25px;
+  transition: transform 0.5s ease;
+}
+
+#Products img {
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  position: relative;
+}
+
+#Products .owl-nav {
+  display: flex;
+  position: absolute;
+  top: -122px;
+  inset-inline-end: 0;
+}
+
+#Products .owl-nav img {
+  width: 18px;
+  height: 18px;
+}
+
+#Products .owl-nav .owl-prev,
+#Products .owl-nav .owl-next {
+  background-color: #E5E5E5;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+}
+
+#Products .owl-nav .owl-prev:hover,
+#Products .owl-nav .owl-next:hover {
+  background-color: #F3F3F3;
+}
+
+#Products .owl-nav .owl-prev:hover img,
+#Products .owl-nav .owl-next:hover img {
+  filter: invert(67%) sepia(0%) saturate(1293%) hue-rotate(258deg) brightness(112%) contrast(83%);
+}
+
+#Products .owl-nav .owl-prev img {
+  transform: rotate(180deg);
+}
+
+
+.products swiper-container{
+    min-height: 550px;
+}
+.products swiper-slide img {
+  height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    position: relative;
+}
+swiper-container::part(scrollbar) {
+  height: 10px;
+  width: 100%;
+  background: transparent;
+  border-radius: 25px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* The draggable thumb/bullet */
+swiper-container::part(scrollbar-drag) {
+  height: 10px;
+  background: #51565c;
+  border-radius: 25px;
+  transition: transform 0.5s ease;
+
+}
+
+/*========================
+        Guess
+  ========================*/
+.guess .image img {
+  /* position: absolute;
+  top: -60px;
+  right: -80px; */
+}
+
+.guess .image .text-overlay {
+  color: #fff;
+  text-align: center;
+  padding-inline: 25px;
+}
+
+.h-630 {
+  max-height: 740px;
+  height: 100%;
+  object-fit: fill;
+}
+
+.rotate-img {
+  transform: rotate(180deg) scale(-1);
+  width: 65px;
+  margin-inline-end: 10px;
+}
+
+.guess-ticket {
+  background-image: url(/img/landing/hint.png);
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+  min-height: 213px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  inset-inline-end: -80px;
+  width: 100%;
+  max-width: 200px;
+  top: 104px;
+}
+.w-430 {
+  max-width: 430px;
+  width: 100%;
+}
+.h-160 {
+  height: 160px;
+}
+
+.image-arrow {
+  position: absolute;
+  inset-inline-end: 36%;
+  margin-top: 10px;
+}
+
+.container-cont {
+  max-width: 630px;
+  width: 100%;
+}
+
+/*========================
+        customer
+  ========================*/
+.lama img {
+  width: 59px;
+}
+.card-body img {
+  width: 30px;
+}
+
+/* #customer .owl-nav {
+  display: flex;
+  position: absolute;
+  top: -122px;
+  inset-inline-end: 0;
+}
+
+#customer .owl-nav img {
+  width: 18px;
+  height: 18px;
+}
+
+#customer .owl-nav .owl-prev,
+#customer .owl-nav .owl-next {
+  background-color: #E5E5E5;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+}
+
+#customer .owl-nav .owl-prev:hover,
+#customer .owl-nav .owl-next:hover {
+  background-color: #F3F3F3;
+}
+
+#customer .owl-nav .owl-prev:hover img,
+#customer .owl-nav .owl-next:hover img {
+  filter: invert(67%) sepia(0%) saturate(1293%) hue-rotate(258deg) brightness(112%) contrast(83%);
+}
+
+#customer .owl-nav .owl-prev img {
+  transform: rotate(180deg);
+} */
+
+#customer .owl-stage {
+  display: flex;
+}
+
+#customer .owl-item {
+  padding: 0 10px;
+}
+
+
+
+swiper-slide {
+  height: auto;
+}
+
+swiper-slide .card {
+  height: 100%;
+}
+
+.lama img {
+  width: 59px;
+}
+
+.star-icon {
+  width: 30px;
+}
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #E5E5E5;
+}
+/*========================
+        takedew
+  ========================*/
+#takedew .owl-nav {
+  display: flex;
+  position: absolute;
+  top: -130px;
+  inset-inline-end: 0;
+}
+
+#takedew .owl-nav img {
+  width: 18px;
+  height: 18px;
+}
+
+#takedew .owl-nav .owl-prev,
+#takedew .owl-nav .owl-next {
+  background-color: #E5E5E5;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+}
+
+#takedew .owl-nav .owl-prev:hover,
+#takedew .owl-nav .owl-next:hover {
+  background-color: #F3F3F3;
+}
+
+#takedew .owl-nav .owl-prev:hover img,
+#takedew .owl-nav .owl-next:hover img {
+  filter: invert(67%) sepia(0%) saturate(1293%) hue-rotate(258deg) brightness(112%) contrast(83%);
+}
+
+#takedew .owl-nav .owl-prev img {
+  transform: rotate(180deg);
+}
+
+/*========================
+        who
+  ========================*/
+.who {
+  min-height: 600px;
+  height: 100%;
+}
+
+.who img {
+  object-fit: cover;
+}
+
+/*========================
+        caard
+  ========================*/
+.caard img {
+  width: 405px;
+}
+
+/*========================
+        essential
+  ========================*/
+.essential .show img {
+  /* width: 130px;
+  height: 133px !important;
+  border-radius: 20px; */
+
+}
+.product-img {
+    height: 350px !important;
+}
+
+

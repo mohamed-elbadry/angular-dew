@@ -1,0 +1,154 @@
+<!-- start breadcrumbs-->
+<div class="breadcrumbs_area py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="">
+                    <ul class="d-flex gap-3">
+                        <li><a routerLink="/" class="text-crumb fs-16 fw-regular">Home</a></li>
+                        <li>/</li>
+                        <li class="text-third fs-16 fw-regular">My Order</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumbs-->
+
+<!-- Nav-tap-->
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-lg-3 col-12">
+            <div class="nav flex-column gap-4 nav-pills me-3 align-items-start" id="v-pills-tab" role="tablist"
+                aria-orientation="vertical">
+
+                <button (click)="goToorder()"
+                    class="border-0 bg-fully text-luci px-4 shop-padge rounded-2 d-flex justify-content-center align-items-center text-center fs-18 fw-regular shop-padge"
+                    type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Order</button>
+
+                <!-- <a href="myreturns.html"
+                        class="border-0 bg-fully text-luci px-4 shop-padge rounded-2 d-flex justify-content-center align-items-center text-center fs-18 fw-regular"
+                       >Return Requests</a> -->
+
+
+                <a (click)="goTmyprofile()"
+                    class="border-0 active bg-fully text-luci px-4 shop-padge rounded-2 d-flex justify-content-center align-items-center fs-18 text-center fw-regular">My
+                    Profile</a>
+
+
+            </div>
+        </div>
+        <div class="col-md-9 col-lg-9 col-12">
+            <div class="tab-content w-100" id="v-pills-tabContent">
+
+                <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel"
+                    aria-labelledby="v-pills-profile-tab" tabindex="0">
+                    <h3 class="ps-3 py-4 fs-18 fw-regular">My Order</h3>
+                    <div class="table-responsive w-100">
+                        <table class="table text-center">
+                            <thead>
+                                <tr>
+                                    <th class="fs-16 fw-regular">Order Number</th>
+                                    <th class="fs-16 fw-regular">Date</th>
+                                    <th class="fs-16 fw-regular">Order Status</th>
+                                    <th class="fs-16 fw-regular">Total</th>
+                                    <th class="fs-16 fw-regular">Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let order of orders">
+
+                                    <td class="fs-14 fw-regular text-third">
+                                        {{ order.id }}
+                                    </td>
+
+                                    <td class="fs-14 fw-regular text-third">
+                                        {{ order.date | date:'mediumDate' }}
+                                    </td>
+
+                                    <td class="fs-14 fw-regular text-third">
+                                        <span class="success">
+                                            {{ order.status }}
+                                        </span>
+                                    </td>
+
+                                    <td class="fs-14 fw-regular text-third">
+                                        <span class="regular_price">
+                                            {{ order.total }}
+                                        </span>
+
+                                        <img src="img/icons/riyal.png" alt="riyal" class="img-fluid"
+                                            style="width: 25px;">
+                                    </td>
+
+                                    <td>
+                                        <div class="btn-group gap-2">
+
+                                            <a (click)="viewOrder(order)"
+                                                class="btn p-2 rounded-3 fs-14 fw-regular text-third bg-secound">
+                                                Order Details
+                                            </a>
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <!-- <table class="table text-center">
+                                <thead>
+                                    <tr>
+                                        <th class="fs-16 fw-regular">Order Number</th>
+                                        <th class="fs-16 fw-regular">Date</th>
+                                        <th class="fs-16 fw-regular">Order Status</th>
+                                        <th class="fs-16 fw-regular">Total</th>
+                                        <th class="fs-16 fw-regular">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fs-14 fw-regular text-third">1</td>
+                                        <td class="fs-14 fw-regular text-third">May 10, 2018</td>
+                                        <td class="fs-14 fw-regular text-third"><span class="success">complete</span>
+                                        </td>
+                                        <td class="fs-14 fw-regular text-third"> <span
+                                                class="regular_price">25.00</span>
+                                            <img src="img/icons/riyal.png" alt="riyal" class="img-fluid"
+                                                style="width: 25px;">
+                                        </td>
+                                        <td>
+                                            <div class="btn-group gap-2">
+                                               
+                                                <a (click)="goToOrderdetails()"
+                                                    class="btn p-2 rounded-3 fs-14 fw-regular text-third bg-secound">
+                                                    Order Details
+                                                </a>
+                                                
+                                              
+                                            </div>
+                                        </td>
+                                    </tr>
+                                  
+                                </tbody>
+                            </table> -->
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Nav-tap-->

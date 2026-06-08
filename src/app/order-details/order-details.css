@@ -1,0 +1,12 @@
+.prod {
+    background-color: var(--color-brod);
+}
+.table_desc .cart_page table thead tr th {
+    border-bottom: 3px solid #ffd54c;
+    border-right: 1px solid #f0f0f0;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 10px;
+    text-align: center;
+}

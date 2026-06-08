@@ -1,0 +1,125 @@
+ <!--landing-->
+    <div class="container-fluid">
+        <div class="sign bg-text rounded-bottom-4">
+            <div class="row ">
+                <div class="col-md-6 col-12">
+                    <div class="container">
+                         <div class="d-flex flex-column  ps-5 pe-5 h-100">
+                            <div class="ps-5">
+                                 <div class="mt-5 pt-5">
+                            <h3 class="fs-24 fw-regular fw-arp-bold">Register</h3>
+                            <p class="fw-mont fs-18 pb-5">Register to Access Your Account.</p>
+
+                        </div>
+                        <form (ngSubmit)="onRegister()">
+                            <div class="row">
+                                <div class="col-lg-12 col-12">
+                                    <div class="mb-3 mt-3 shadow-bottom">
+                                        <div
+                                            class="d-flex align-items-center bg-white p-2 rounded-4">
+                                           <input type="text"
+  [(ngModel)]="firstName"
+  name="firstName"
+  [placeholder]="submitted && !firstName ? 'ادخل الاسم الاول' : 'First Name'"
+  [ngClass]="{'error-input': submitted && !firstName}"
+  class="form-control border-0 fs-14 fw-mont">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-12">
+                                    <div class="mb-3 mt-3 shadow-bottom">
+                                        <div
+                                            class="d-flex align-items-center bg-white p-2 rounded-4">
+                                           <input type="text"
+  [(ngModel)]="lastName"
+  name="lastName"
+  [placeholder]="submitted && !lastName ? 'ادخل الاسم الثاني' : 'Last Name'"
+  [ngClass]="{'error-input': submitted && !lastName}"
+  class="form-control border-0 fs-14 fw-mont">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-12">
+                                    <div class="mb-3 mt-3 shadow-bottom">
+                                        <div
+                                            class="d-flex align-items-center bg-white p-2 rounded-4">
+                                           
+  <input type="text"
+  [(ngModel)]="mobile"
+  name="mobile"
+  [placeholder]="submitted && !mobile ? 'ادخل الموبايل' : 'Mobile Number'"
+  [ngClass]="{'error-input': submitted && !mobile}"
+  class="form-control border-0 fs-14 fw-mont">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-12">
+                                    <div class="mb-3 mt-3 shadow-bottom">
+                                        <div
+                                            class="d-flex align-items-center bg-white p-2 rounded-4">
+                                            <input type="email"
+  [(ngModel)]="email"
+  name="email"
+  [placeholder]="submitted && !email ? 'ادخل الايميل' : 'Email'"
+  [ngClass]="{'error-input': submitted && !email}"
+  class="form-control border-0 fs-14 fw-mont">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-12">
+                                    <div class="mb-3 shadow-bottom">
+                                        <div
+                                            class="d-flex align-items-center bg-white p-2 rounded-4">
+                                            
+                                         <input type="password"
+  [(ngModel)]="password"
+  name="password"
+  [placeholder]="submitted && !password ? 'ادخل الباسورد' : 'Password'"
+  [ngClass]="{'error-input': submitted && !password}"
+  class="form-control border-0 fs-14 fw-mont">
+                                            <img src="img/icons/eye.svg" alt="eya" class="me-2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="login_submit d-flex justify-content-between gap-3 py-3 d-md-flex md-flex-column gap-2">
+                                    <div>
+                                        <button type="button"
+  (click)="onRegister()"
+  class="w-100 d-block py-3 px-4 bg-sign text-white rounded-4 fs-18 text-center fw-arp-bold border-0">
+  Register
+</button>
+                                        <!-- <p class="fw-mont fs-16 text-forth pt-3">Already have an account?<a  class="text-black  fs-18 px-2 text-decoration-underline">Sign in</a>   </p> -->
+                                    </div>
+                                     
+                                    <!-- <a href="reset password.html" class="fw-mont fs-16 me-3 text-forg text-decoration-underline">Forgot password?</a> -->
+                                    <div class="d-flex flex-column gap-3">
+    
+    
+
+</div>
+                                </div>
+                                
+                                
+                            </div>
+                        </form>
+                            </div>
+                       
+                    </div>
+
+
+                    </div>
+                   
+                </div>
+
+               <div class="col-md-6 col-12">
+                <div class="image d-flex align-items-center justify-content-center h-100 py-3">
+
+                    <img [src]="fixedProduct?.image || 'img/product/dew-cear.png'" alt="product"
+                        class="img-fluid object-fit-contain">
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--end-landing-->

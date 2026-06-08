@@ -1,0 +1,118 @@
+<!-- start breadcrumbs-->
+<div class="breadcrumbs_area py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="">
+                    <ul class="d-flex gap-3">
+                        <li><a routerLink="/" class="text-crumb fs-16 fw-regular">Home</a></li>
+                        <li>/</li>
+                        <li class="text-third fs-16 fw-regular">Order Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumbs-->
+<div class="shopping_cart_area mt-4 py-4">
+    <div class="container">
+        <form action="#">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table_desc">
+                        <div class="cart_page table-responsive text-center">
+                            <table class="border w-100">
+                                <thead class="prod">
+                                    <tr>
+                                        <th class="fw-regular fs-14">Products</th>
+                                        <th class="fw-regular fs-14">Images</th>
+                                        <th class="fw-regular fs-14">Price</th>
+                                        <th class="fw-regular fs-14">Quantity</th>
+                                        <th class="fw-regular fs-14">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of items">
+                                        <td>
+                                            <a class="text-third fs-14 fw-regular">
+                                                {{ item.title }}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <img [src]="item.image" class="img-fluid"
+                                                style="width:150px;height:300px;object-fit:contain">
+                                        </td>
+                                        <td class="product-price">
+                                            {{ item.price }}
+                                        </td>
+                                        <td class="product_quantity">
+                                            {{ item.quantity || 1 }}
+                                        </td>
+                                        <td class="product_total">
+                                            {{ getTotal(item) }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--coupon code area start-->
+
+        </form>
+    </div>
+</div>
+<div class="coupon_area py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex mb-3">
+                <div
+                    class="h-100 w-100 border border-text-bord border-1 border-top-0 rounded-bottom-3 rounded-2 overflow-hidden">
+                    <h3 class="text-light fs-20 fw-regular bg-acc p-3 m-0">
+                        Total
+                    </h3>
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center px-3 py-2 pt-3">
+                            <p class="fs-14 text-text fw-regular">Total</p>
+
+                            <p class="fs-14 text-text fw-regular">
+                                {{ order.total }}
+                                <img src="img/icons/riyal.png" alt="riyal" class="img-fluid" style="width:20px;">
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center px-3">
+                            <p class="fs-14 text-text fw-regular">
+                                VAT 15%
+                            </p>
+                            <p class="fs-14 text-text fw-regular">
+                                {{ (order.total || 0) * 0.15 | number:'1.2-2' }}
+                                <img src="img/icons/riyal.png" alt="riyal" class="img-fluid" style="width:20px;">
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center px-3">
+                            <p class="fs-14 text-text fw-regular">
+                                Shipping Cost
+                            </p>
+                            <p class="fs-14 text-text fw-regular">
+                                0
+                                <img src="img/icons/riyal.png" alt="riyal" class="img-fluid" style="width:20px;">
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center px-3 pb-3">
+                            <p class="fs-14 text-text fw-regular">
+                                Final Total
+                            </p>
+                            <p class="fs-14 text-text fw-regular fw-bold">
+                                {{ (order.total || 0) + ((order.total || 0) * 0.15) | number:'1.2-2' }}
+                                <img src="img/icons/riyal.png" alt="riyal" class="img-fluid" style="width:20px;">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,339 @@
+<!-- start essential-->
+    <div class="essential py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="show d-flex flex-wrap justify-content-center mb-3 gap-3">
+                
+                            <img  [src]="product?.image" class="img-fluid thump" (click)="changeImage(product?.image)" />
+                
+                        </div>
+                    </div>
+                
+                    <div class="col-md-8">
+                        <div class="d-flex justify-content-start">
+                            <img [src]="selectedImage" class="img-fluid w-100 object-fit-cover rounded-5 mb-3" />
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-5 col-12 ps-5">
+                    <h3 class="fs-36 fw-regular text-perf">{{ product?.title }}</h3>
+                    <h4 class="fs-18 fw-mont text-full">{{ product?.category }}</h4>
+                    <p class="fw-mont fs-16 text-look lin-120 pb-3">
+                        {{ product?.description }}
+                    </p>
+                    <div
+                        class="py-3 d-flex rounded-2 justify-content-between align-items-center border border-text-bord border-1 text-black p-2 w-538 hover-black-white">
+                       <a
+  (click)="addToCart()"
+  class="text-black fs-18 fw-regular ms-2"
+  style="cursor:pointer"
+>
+  Shop now
+</a>
+                        <p class="p-0 m-0 text-sr d-flex justify-content-end align-items-center me-2">
+                            <span class="text-sr fs-22 fw-regular">{{ product?.price }}</span>
+                            <img src="img/icons/riyal.png" alt="riyal" class="img-fluid" style="width: 25px;">
+                        </p>
+                    </div>
+                    <h3 class="py-3 mt-3 fw-regular fs-18 text-perf">See it in action</h3>
+                    <swiper-container #swiper slides-per-view="3.5" space-between="25" loop="true" autoplay-delay="2000">
+            @for (item of products; track $index) {
+            <swiper-slide>
+                <img [src]="item.image" class="img-fluid w-100 img-action" />
+            </swiper-slide>
+            }
+        </swiper-container>
+
+                    <div class="accordion py-5" id="accordionExample">
+                        <div class="accordion-item border-0 border-top border-bottom mb-0">
+                            <h2 class="accordion-header p-2 py-3">
+                                <button class="accordion-button collapsed fs-24 fw-regular border-0 text-perf"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                    aria-expanded="false" aria-controls="collapseOne">
+                                    Benefits
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body fw-mont fs-18 text-look lin-120 pb-3">
+                                     {{ product?.description }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 border-top border-bottom mb-0">
+                            <h2 class="accordion-header p-2">
+                                <button class="accordion-button collapsed fs-24 fw-regular border-0 text-perf"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    How to use
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse rounded-3"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body rounded-3 fw-mont fs-18 text-look lin-120 pb-3">
+                                    {{ product?.description }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-top border-bottom mb-0">
+                            <h2 class="accordion-header p-2">
+                                <button class="accordion-button collapsed fs-24 fw-regular border-0 text-perf"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseFoure"
+                                    aria-expanded="false" aria-controls="collapseFoure">
+                                    Key Ingredients
+                                </button>
+                            </h2>
+                            <div id="collapseFoure" class="accordion-collapse collapse rounded-3"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body rounded-3 fw-mont fs-18 text-look lin-120 pb-3">
+                                       {{ product?.description }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 border-top border-bottom mb-0">
+                            <h2 class="accordion-header p-2">
+                                <button class="accordion-button collapsed fs-24 fw-regular border-0 text-perf"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                    Reviews
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse show rounded-3"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body rounded-3">
+                                    <swiper-container  style="width:100%" slides-per-view="1" space-between="20" loop="true" pagination="false" autoplay-delay="2000">
+                                        <swiper-slide>
+                                            <div class="card rounded-3 border-1 border-bord h-100 w-100">
+                                                <div class="d-flex py-3 px-2 gap-3 justify-content-between border-bottom align-items-center border-2 mx-3">
+                                                    <div class="d-flex gap-2 justify-content-end py-3">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                    </div>
+                                                    <div class="d-flex gap-2">
+                                                        <div class="text text-end">
+                                                            <h3 class="fw-bold fs-20 text-arp mb-1">لمى الفوزان</h3>
+                                                            <p class="fw-pop-medium fs-16 text-card p-0 m-0">
+                                                                01/02/2025
+                                                            </p>
+                                                        </div>
+                                                        <div class="lama">
+                                                            <img src="img/landing/lama.png" class="img-fluid rounded-circle" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text py-3 fw-arp text-end lh-base text-arp fs-18 text-truncate">
+                                                        من 2021 مارجعت بشرتي قطعة وحده وكنت<br> وقتها أراجع بعيادة
+                                                        الحين ماشاءالله لاقوة إلا
+                                                        <br>بالله رجعت
+                                                        بشرتي قزازة لمعة النظاره ما تروح<br> والله من شاور لشاور .
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </swiper-slide>
+                                        <swiper-slide>
+                                            <div class="card rounded-3 border-1 border-bord h-100 w-100">
+                                                <div class="d-flex py-3 px-2 gap-3 justify-content-between border-bottom align-items-center border-2 mx-3">
+                                                    <div class="d-flex gap-2 justify-content-end py-3">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                    </div>
+                                                    <div class="d-flex gap-2">
+                                                        <div class="text text-end">
+                                                            <h3 class="fw-bold fs-20 text-arp mb-1">لمى الفوزان</h3>
+                                                            <p class="fw-pop-medium fs-16 text-card p-0 m-0">
+                                                                01/02/2025
+                                                            </p>
+                                                        </div>
+                                                        <div class="lama">
+                                                            <img src="img/landing/lama.png" class="img-fluid rounded-circle" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text py-3 fw-arp text-end lh-base text-arp fs-18 text-truncate">
+                                                        من 2021 مارجعت بشرتي قطعة وحده وكنت<br> وقتها أراجع بعيادة
+                                                        الحين ماشاءالله لاقوة إلا
+                                                        <br>بالله رجعت
+                                                        بشرتي قزازة لمعة النظاره ما تروح<br> والله من شاور لشاور .
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </swiper-slide>
+                                        <swiper-slide>
+                                            <div class="card rounded-3 border-1 border-bord h-100 w-100">
+                                                <div class="d-flex py-3 px-2 gap-3 justify-content-between border-bottom align-items-center border-2 mx-3">
+                                                    <div class="d-flex gap-2 justify-content-end py-3">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                    </div>
+                                                    <div class="d-flex gap-2">
+                                                        <div class="text text-end">
+                                                            <h3 class="fw-bold fs-20 text-arp mb-1">لمى الفوزان</h3>
+                                                            <p class="fw-pop-medium fs-16 text-card p-0 m-0">
+                                                                01/02/2025
+                                                            </p>
+                                                        </div>
+                                                        <div class="lama">
+                                                            <img src="img/landing/lama.png" class="img-fluid rounded-circle" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text py-3 fw-arp text-end lh-base text-arp fs-18 text-truncate">
+                                                        من 2021 مارجعت بشرتي قطعة وحده وكنت<br> وقتها أراجع بعيادة
+                                                        الحين ماشاءالله لاقوة إلا
+                                                        <br>بالله رجعت
+                                                        بشرتي قزازة لمعة النظاره ما تروح<br> والله من شاور لشاور .
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </swiper-slide>
+                                       <swiper-slide>
+                                            <div class="card rounded-3 border-1 border-bord h-100 w-100">
+                                                <div class="d-flex py-3 px-2 gap-3 justify-content-between border-bottom align-items-center border-2 mx-3">
+                                                    <div class="d-flex gap-2 justify-content-end py-3">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                        <img src="img/icons/Star yellow.svg" alt="star" class="img-fluid" style="width: 15px;">
+                                                    </div>
+                                                    <div class="d-flex gap-2">
+                                                        <div class="text text-end">
+                                                            <h3 class="fw-bold fs-20 text-arp mb-1">لمى الفوزان</h3>
+                                                            <p class="fw-pop-medium fs-16 text-card p-0 m-0">
+                                                                01/02/2025
+                                                            </p>
+                                                        </div>
+                                                        <div class="lama">
+                                                            <img src="img/landing/lama.png" class="img-fluid rounded-circle" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text py-3 fw-arp text-end lh-base text-arp fs-18 text-truncate">
+                                                        من 2021 مارجعت بشرتي قطعة وحده وكنت<br> وقتها أراجع بعيادة
+                                                        الحين ماشاءالله لاقوة إلا
+                                                        <br>بالله رجعت
+                                                        بشرتي قزازة لمعة النظاره ما تروح<br> والله من شاور لشاور .
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </swiper-slide>
+                                    </swiper-container>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end essential-->
+      <!-- start our product -->
+    <div class="our-product py-5">
+  <div class="container">
+
+    <div class="text-center">
+      <h2 class="text-perf fs-36 fw-regular mb-3">
+        Our best seller products
+      </h2>
+    </div>
+
+    <div class="row">
+
+      @for (product of products.slice(0, 3); track product.id) {
+
+      <div class="col-lg-4 col-md-4 col-sm-6 py-4" >
+
+        <div class="card border-0 h-100">
+
+          <div class="image p-5 bg-text rounded-4 position-relative">
+
+            <img [src]="product.image" class="img-fluid product-img"/>
+
+            <div class="position-absolute" style="top: 22px; inset-inline-start: 20px;">
+              <span class="bg-fully text-luci px-4 py-2 rounded-2 fs-18">
+                {{ product.category }}
+              </span>
+            </div>
+
+          </div>
+
+          <div class="d-flex flex-column gap-3 py-4">
+
+            <h2 class="fs-24 fw-regular text-truncate" (click)="navigateToProduct(product.id)">
+              {{ product.title }}
+            </h2>
+
+            <p class="text-forth fs-20 fw-mont text-truncate">
+              {{ product.description }}
+            </p>
+
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center border p-2 py-3 hover-black-white">
+
+            <a (click)="navigateToProduct(products[0].id)"
+                       style="cursor:pointer" class="text-black fs-18 fw-regular ms-2">
+              Shop now
+            </a>
+
+            <p class="p-0 m-0 d-flex align-items-center me-2">
+              <span class="fs-22 fw-regular">
+                {{ product.price }}
+              </span>
+              <img src="img/icons/riyal.png" style="width: 25px;">
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+
+      }
+
+    </div>
+  </div>
+</div>
+    <!-- end our product -->
+<!-- Start video-->
+    <!-- <div class="video py-5">
+        <div class="container">
+            <div class="position-relative overflow-hidden rounded-4">
+                <img src="img/product/prod.png" alt="prod" class="img-fluid img-scale">
+                <a href="https://www.youtube.com/watch?v=abcd1234" target="_blank"
+                    class="position-absolute top-50 start-50 translate-middle play-btn d-flex align-items-center justify-content-center">
+                    <img src="img/icons/play.svg" alt="play" class="img-fluid">
+                </a>
+            </div>
+        </div>
+    </div> -->
+    <!-- End video -->
+    
+<div class="container">
+  <div class="row py-3">
+    <div class="col-md-12">
+      <h1>Product</h1>
+      <p>This is the product page of our application.</p>
+    </div>
+  </div>
+</div>

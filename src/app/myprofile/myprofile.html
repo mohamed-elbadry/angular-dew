@@ -1,0 +1,118 @@
+ <!-- start breadcrumbs-->
+    <div class="breadcrumbs_area py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="">
+                        <ul class="d-flex gap-3">
+                           <li><a href="index.html" class="text-crumb fs-16 fw-regular">Home</a></li>
+                            <li>/</li>
+                            <li class="text-third fs-18 fw-regular">my profile</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumbs-->
+
+    <!-- Nav-tap-->
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-12">
+                 <div class="nav flex-column gap-4 nav-pills me-3 align-items-start" id="v-pills-tab" role="tablist"
+                    aria-orientation="vertical">
+                    
+                    <button (click)="goToorder()"
+                        class="border-0 bg-fully text-luci px-4 shop-padge rounded-2 d-flex justify-content-center align-items-center text-center fs-18 fw-regular shop-padge"
+                        type="button"
+                        role="tab" aria-controls="v-pills-profile" aria-selected="false">Order</button>
+
+                    <!-- <a href="myreturns.html"
+                        class="border-0 bg-fully text-luci px-4 shop-padge rounded-2 d-flex justify-content-center align-items-center text-center fs-18 fw-regular"
+                       >Return Requests</a> -->
+                    
+
+                    <a (click)="goTmyprofile()"
+                        class="border-0 active bg-fully text-luci px-4 shop-padge rounded-2 d-flex justify-content-center align-items-center fs-18 text-center fw-regular"
+                       >My Profile</a>
+                    
+                     
+                </div>
+            </div>
+            <div class="col-md-9 col-lg-9 col-12">
+                <div class="tab-content w-100" id="v-pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab" tabindex="0">
+                        <h3 class="py-4 fs-18 fw-regular">My profile</h3>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <div class="mb-3">
+                                    <label for="f-name" class="form-label fw-medium text-quick fs-14">First Name</label>
+                                    <div
+                                        class="d-flex align-items-center bg-sup p-2 rounded-4 border-input-bottom mb-3">
+                                        <input type="text" name="text"
+                                            class="form-control border-0 fs-14 fw-mont text-ope bg-transparent"
+                                            placeholder="F Name">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-12 col-12">
+                                <div class="mb-3">
+                                    <label for="f-name" class="form-label fw-medium text-quick fs-14">Last Name</label>
+                                    <div
+                                        class="d-flex align-items-center bg-sup p-2 rounded-4 border-input-bottom mb-3">
+                                        <input type="text" name="text"
+                                            class="form-control border-0 fs-14 fw-mont text-ope bg-transparent"
+                                            placeholder="L Name">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-12 col-12">
+                                <div class="mb-3">
+                                    <label for="f-name" class="form-label fw-medium text-quick fs-14">Email
+                                        Address</label>
+                                    <div
+                                        class="d-flex align-items-center bg-sup p-2 rounded-4 border-input-bottom mb-3">
+                                        <input type="email" name="email"
+                                            class="form-control border-0 fs-14 fw-mont text-ope bg-transparent"
+                                            placeholder="Email Address">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-12 col-12">
+                                <div class="mb-3">
+                                    <label for="f-name" class="form-label fw-medium text-quick fs-14">PhoneNumber</label>
+                                    <div
+                                        class="d-flex align-items-center bg-sup p-2 rounded-4 border-input-bottom mb-3">
+                                        <input type="text" name="text"
+                                            class="form-control border-0 fs-14 fw-mont text-ope bg-transparent"
+                                            placeholder="PhoneNumber">
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                        <div >
+                            <button type="submit" class="bg-primary border-0 fs-14 fw-regular rounded-3 p-2">Save</button>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Nav-tap-->

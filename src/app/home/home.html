@@ -1,0 +1,448 @@
+
+ <!--landing-->
+    <div class="container-fluid">
+        <div class="landing bg-secound rounded-bottom-4 pt-3">
+            <div class="container m-641">
+                <div class="row m-641">
+                    <div class="col-md-6 col-12">
+                        <div class="essential d-flex flex-column mt-sm-5 pt-sm-5 mt-4  ps-xl-3 h-100 w-100">
+                            <div class="mt-sm-5 ">
+                                <p class="fs-42 fw-regular text-black mb-3 " (click)="navigateToProduct(featuredProduct.id)">{{ featuredProduct?.title }}</p>
+                                <a (click)="navigateToProduct(featuredProduct.id)"
+                                    class=" fs-21 d-inline-flex justify-content-center align-items-center border border-text-black border-1 text-black rounded-2 fw-regular py-2 px-5 align-self-start hover-black-white">Shop
+                                    now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 position-relative d-flex align-items-end justify-content-center pe-xl-4 ">
+                        <img src="{{ featuredProduct?.image }}" alt="landing" class="img-fluid ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end-landing-->
+     <!-- start products-->
+    <div class="container">
+        <div class="text-center py-5">
+            <div class="py-4 bg-text rounded-top-4 rounded-end-4 max-width716 mx-auto ">
+                <h2 class="sold lin-18 px-3 pt-3 fw-regular fs-24 text-sold">We sold over <span class="text-time">20,000
+                        products</span>
+                    in record time, and all the customers are amazed.</h2>
+                <div class="d-flex justify-content-center gap-2 py-3">
+                    <img src="img/icons/Star.svg" alt="">
+                     <img src="img/icons/Star.svg" alt="">
+                      <img src="img/icons/Star.svg" alt="">
+                       <img src="img/icons/Star.svg" alt="">
+                        <img src="img/icons/Star.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end products -->
+      <!-- start our product -->
+    <div class="our-product py-5">
+  <div class="container">
+
+    <div class="text-center">
+      <h2 class="text-perf fs-36 fw-regular mb-3">
+        Our best seller products
+      </h2>
+    </div>
+
+    <div class="row">
+
+      @for (product of products.slice(0, 3); track product.id) {
+
+      <div class="col-lg-4 col-md-4 col-sm-6 py-4" >
+
+        <div class="card border-0 h-100">
+
+          <div class="image p-5 bg-text rounded-4 position-relative">
+
+            <img [src]="product.image" class="img-fluid product-img"/>
+
+            <div class="position-absolute" style="top: 22px; inset-inline-start: 20px;">
+              <span class="bg-fully text-luci px-4 py-2 rounded-2 fs-18">
+                {{ product.category }}
+              </span>
+            </div>
+
+          </div>
+
+          <div class="d-flex flex-column gap-3 py-4">
+
+            <h2 class="fs-24 fw-regular text-truncate" (click)="navigateToProduct(product.id)">
+              {{ product.title }}
+            </h2>
+
+            <p class="text-forth fs-20 fw-mont text-truncate">
+              {{ product.description }}
+            </p>
+
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center border p-2 py-3 hover-black-white">
+
+            <a href="#" class="text-black fs-18 fw-regular ms-2">
+              Shop now
+            </a>
+
+            <p class="p-0 m-0 d-flex align-items-center me-2">
+              <span class="fs-22 fw-regular">
+                {{ product.price }}
+              </span>
+              <img src="img/icons/riyal.png" style="width: 25px;">
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+
+      }
+
+    </div>
+  </div>
+</div>
+    <!-- end our product -->
+     <!-- start-gift-->
+   <div class="container" *ngIf="products.length">
+    <div class="gifts py-5 d-flex">
+        <div class="row g-0 w-100 align-items-stretch">
+
+            <div class="col-md-7 col-12 bg-text rounded-starts d-flex flex-column gap-3 justify-content-end ps-5 py-5">
+                 
+                <h2 class="fw-regular fs-36 text-pref mb-2">E-Gift Card</h2>
+
+                <div
+                    class="d-flex rounded-2 justify-content-between align-items-center border border-text-bord border-1 text-black p-2 py-3 w-327 hover-black-white">
+
+                    <a (click)="navigateToProduct(products[0].id)"
+                       style="cursor:pointer"
+                       class="text-black fs-18 fw-regular ms-2">
+                        Shop now
+                    </a>
+
+                    <p class="p-0 m-0 text-sr d-flex justify-content-end align-items-center me-2">
+                        <span class="text-sr fs-22 fw-regular">
+                            {{ products[0].price }}
+                        </span>
+
+                        <img src="img/icons/riyal.png"
+                             alt="riyal"
+                             class="img-fluid"
+                             style="width:25px;">
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-5 col-12">
+                <div class="rounded-ends d-flex justify-content-center align-items-center bg-gift h-100">
+
+                    <div class="image">
+                        <div class="bg-image p-3 rounded-3 mx-5">
+
+                            <div class="border border-dark rounded-3 border-1">
+
+                                <img
+                                    class="py-2 px-5 img-fluid"
+                                    [src]="products[0].image"
+                                    [alt]="products[0].title">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <!-- end-gift-->
+      <!-- start care -->
+    <!-- <div class="container">
+        <div class="care py-5 h-100">
+            <div class="row g-0 align-items-stretch">
+                <div class="col-md-6 col-12 p-0">
+
+                    <img src="img/landing/care r.png" alt="dew" class="img-fluid w-100 h-100 rounded-starts">
+
+                </div>
+                <div class="col-md-6 col-12 p-0 ">
+                    <div class="bg-text  h-100 d-flex justify-content-center align-items-center rounded-ends">
+                        <div class="d-flex flex-column p-3 py-5">
+                            <img src="img/icons/heart.svg" alt="heart" class="heart img-fluid" style="width: 60px;">
+                            <h3 class="pb-3 fw-regular fs-36 text-sr">I Dew love you</h3>
+                            <h4 class="pb-3 fw-regular fs-24 text-main lin-120">Got someone special you love,<br>
+                                admire, or
+                                just want to show you care?</h4>
+                            <p class="pb-3 fw-mont fs-22 lin-18">“Dew” has put together a simple yet<br>
+                                meaningful gift! A self-care product and a<br>
+                                coffee cup—because the best gestures<br> come from the heart
+                            </p>
+                            <div
+                                class="d-flex rounded-2 justify-content-between align-items-center border border-text-bord border-1 text-black p-2 py-3 hover-black-white">
+                                <a href="shop.html" class="text-black fs-18 fw-regular ms-2">
+                                    Shop now
+                                </a>
+                                <p class="p-0 m-0 text-sr d-flex justify-content-end align-items-center me-2">
+                                    <span class="text-sr fs-22 fw-regular">149</span>
+                                    <img src="img/icons/riyal.png" alt="riyal" class="img-fluid" style="width: 25px;">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+   
+   <div class="container" *ngIf="products.length > 1">
+    <div class="care py-5 h-100">
+        <div class="row g-0 align-items-stretch">
+
+            <div class="col-md-6 col-12 p-0">
+                <img
+                    [src]="featuredProduct?.image"
+                    [alt]="featuredProduct?.title"
+                    class="img-fluid h-100 rounded-starts"
+                    style="object-fit: contain;">
+            </div>
+
+            <div class="col-md-6 col-12 p-0">
+                <div class="bg-text h-100 d-flex justify-content-center align-items-center rounded-ends">
+
+                    <div class="d-flex flex-column p-3 py-5">
+
+                        <img src="img/icons/heart.svg"
+                             alt="heart"
+                             class="heart img-fluid"
+                             style="width:60px;">
+
+                       <h3
+  class="pb-3 fw-regular fs-36 text-sr"
+  style="cursor: pointer;"
+  (click)="navigateToProduct(featuredProduct.id)">
+
+  {{ truncateTitle(featuredProduct?.title) }}
+
+</h3>
+
+                        <h4 class="pb-3 fw-regular fs-24 text-main lin-120">
+                            {{ featuredProduct?.category }}
+                        </h4>
+
+                        <p class="pb-3 fw-mont fs-22 lin-18">
+                            {{ featuredProduct?.description }}
+                        </p>
+
+                        <div
+                            class="d-flex rounded-2 justify-content-between align-items-center border border-text-bord border-1 text-black p-2 py-3 hover-black-white">
+
+                            <a
+                                (click)="navigateToProduct(featuredProduct.id)"
+                                style="cursor:pointer"
+                                class="text-black fs-18 fw-regular ms-2">
+                                Shop now
+                            </a>
+
+                            <p class="p-0 m-0 text-sr d-flex justify-content-end align-items-center me-2">
+                                <span class="text-sr fs-22 fw-regular">
+                                    {{ featuredProduct?.price }}
+                                </span>
+
+                                <img src="img/icons/riyal.png"
+                                     alt="riyal"
+                                     class="img-fluid"
+                                     style="width:25px;">
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <!-- end care -->
+    <!-- Start Products -->
+    <section class="products py-5 position-relative">
+        <div class="container">
+            <div class="d-flex">
+                <h3 class="fw-regular fs-36 mb-4 py-4">Our Products</h3>
+            </div>
+            <div id="Products img">
+                 <swiper-container #swiper slides-per-view="3.5" space-between="25" loop="true" autoplay-delay="2000" scrollbar="true"
+            scrollbar-hide="false" style="padding-bottom: 30px;">
+            @for (item of products; track $index) {
+            <swiper-slide>
+                <img [src]="item.image" class="img-fluid w-100" />
+            </swiper-slide>
+            }
+        </swiper-container>
+            </div>
+       
+    
+            <!-- <div class="progress-wrapper">
+                <div class="progress-bar" [style.transform]="'translateX(' + progress + 'px)'"></div>
+            </div> -->
+        </div>
+    </section>
+    <!-- End Products -->
+    <!-- start Guess -->
+    <div class="container-fluid">
+        <div class="guess py-5">
+            <div class="row g-0">
+                <div class="col-lg-6 col-12 position-relative">
+                    <div
+                        class="py-5 bg-text rounded-0 rounded-start-4 h-100 d-flex justify-content-end align-items-center ">
+                        <div class="container-cont">
+                            <div class="not-tell  flex-column ps-sm-5 ps-3">
+                                <h3 class="fw-regular fs-36">Guess!  {{ truncateTitle(featuredProduct?.title) }}</h3>
+                                <p class=" fw-mont fs-18 pb-3">
+                                    {{ featuredProduct?.description }}
+                                </p>
+                                <div class="bg-white w-430 rounded-3 pt-2 position-relative">
+                                    <p class="p-3 pb-4 bt-5 fw-mont fs-14 text-pref h-160">Describe Our next
+                                        collection ......</p>
+                                    <div class="image position-absolute guess-ticket ">
+                                        <div class="text-overlay text-center">
+                                            <h3 class="fw-regular fs-20 text-gift ">Hint</h3>
+                                            <p class="fw-mont fs-12 text-gift">
+                                                A range of distinctive and unique modern products will be guaranteed.</p>
+                                        </div>
+
+
+                                    </div>
+                                    <img src="img/icons/arrow.svg" alt="arrow" class="img-fluid image-arrow">
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 p-0">
+                    <img src="{{ featuredProduct?.image }}" alt="dew" class="img-fluid w-100 h-630 image-land">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end Guess -->
+     <!-- start care about -->
+    <!-- <div class="container">
+        <div class="care about py-5 my-5 bg-text rounded-4 px-4">
+            <div class="text-center">
+                <img src="img/icons/beauty cream.svg" alt="beauty">
+                <h3 class="fw-regular fs-36 text-look">I dew care about you!</h3>
+                <p class="fw-mont fs-18 text-look lin-120">It's not just words; it's the truth. That's why we're
+                    launching a<br>
+                    Glow-Up Challenge just between me and you, lasting for<br>
+                    three durations: one month, three months, and six months.
+                </p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3 class="fw-regular fs-36 text-look py-4">1 month</h3>
+                        <div class="text-center bg-white py-3 px-5 rounded-3 d-inline-block text-center w-332">
+                            <label for="file-1">
+                                <img class="py-2" src="img/icons/drop.svg" alt="">
+                                <p class="fw-mont fs-18 text-look text-truncate">Drop File here</p>
+                            </label>
+                            <input type="file" id="file-1" style="display: none;">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="fw-regular fs-36 text-look py-4">3 month</h3>
+                        <div class="text-center bg-white py-3 px-5 rounded-3 d-inline-block text-center w-332">
+                            <label for="file-2">
+                                <img class="py-2" src="img/icons/drop.svg" alt="">
+                                <p class="fw-mont fs-18 text-look text-truncate">Drop File here</p>
+                            </label>
+                            <input type="file" id="file-2" style="display: none;">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="fw-regular fs-36 text-look py-4">4 month</h3>
+                        <div class="text-center bg-white py-3 px-5 rounded-3 d-inline-block text-center w-332">
+                            <label for="file-3">
+                                <img class="py-2" src="img/icons/drop.svg" alt="">
+                                <p class="fw-mont fs-18 text-look text-truncate">Drop File here</p>
+                            </label>
+                            <input type="file" id="file-3" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+    <!-- End care about -->
+     <!-- Start customer -->
+    <div class="customer py-5 position-relative">
+        <div class="container">
+            <div class="d-flex">
+                <h3 class="happy fw-regular fs-36 text-look mb-5">Our happy customer</h3>
+            </div>
+            <swiper-container slides-per-view="3" space-between="15" pagination="false" autoplay="true" autoplay-delay="3000" loop="true">
+                @for(customer of customers; track $index){
+            
+                <swiper-slide>
+            
+                    <div class="card rounded-3 border-1 border-bord h-100">
+            
+                        <div class="d-flex py-3 px-2 gap-3 justify-content-end align-items-center border-bottom border-2 mx-3">
+            
+                            <div class="text text-end">
+                                <h3 class="fw-bold fs-20 text-arp mb-1">
+                                    {{customer.name}}
+                                </h3>
+            
+                                <p class="fw-pop-medium fs-16 text-card p-0 m-0">
+                                    {{customer.date}}
+                                </p>
+                            </div>
+            
+                            <div class="lama">
+                                <img [src]="customer.image" class="img-fluid rounded-circle" />
+                            </div>
+            
+                        </div>
+            
+                        <div class="card-body">
+            
+                            <div class="d-flex gap-3 justify-content-end py-3">
+            
+                                @for(star of customer.stars; track $index){
+                                <img src="img/icons/Star yellow.svg" class="img-fluid star-icon" />
+                                }
+            
+                            </div>
+            
+                            <p class="card-text py-3 fw-arp text-end lh-base text-arp fs-18">
+                                {{customer.review}}
+                            </p>
+            
+                        </div>
+            
+                    </div>
+            
+                </swiper-slide>
+               
+                }
+            </swiper-container>
+            <!-- <div class="progress-wrapper-customer">
+                <div class="progress-bar-customer"></div>
+            </div> -->
+        </div>
+    </div>
+    <!-- End customer -->
+    

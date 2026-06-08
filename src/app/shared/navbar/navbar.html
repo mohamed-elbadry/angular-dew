@@ -1,0 +1,439 @@
+<!----swiper----->
+<div class="container-fluid">
+    <div class="swiper-wrapper-box p-3 my-2 bg-primary rounded-4 text-center">
+        <swiper-container slides-per-view="1" loop="true" autoplay="true" delay="3000" disable-on-interaction="false">
+            <swiper-slide>
+                <img src="img/logo/_ 🛍 Free Shipping.png" alt="slider1" class="img-fluid">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="img/logo/_ 🛍 Free Shipping.png" alt="slider1" class="img-fluid">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="img/logo/_ 🛍 Free Shipping.png" alt="slider1" class="img-fluid">
+            </swiper-slide>
+        </swiper-container>
+    </div>
+</div>
+<!----swiper----->
+<!-------nav------->
+<div class="container-fluid">
+    <nav class=" navbar navbar-expand-lg py-3 px-xl-4 px-lg-3 bg-secound rounded-top-4">
+        <div class="container-fluid">
+            <a class="navbar-brand postion-brand translate-middle-x start-50 mx-0 align-items-center position-absolute"
+               routerLink="/">
+                <img src="img/logo/logo.svg" alt="" class="img-fluid" width="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span><img id="togglicon" src="img/icons/menu.svg" alt=""></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between  " id="navbarNav">
+                <ul class="navbar-nav d-flex justify-content-right text-right">
+                    <li class="nav-item text-light">
+                        <a class="nav-link text-third fs-18 fw-regular" routerLink="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-third fs-18 fw-regular" routerLink="/shop">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-third fs-18 fw-regular" routerLink="/skin">Skin</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link text-third fs-18 fw-regular" routerLink="/product">Product</a>
+                    </li> -->
+
+                </ul>
+                <div class="d-flex align-items-center justify-content-center gap-2 my-2 ">
+                    <div class="serch">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <img src="img/icons/serch.svg" alt="serch">
+                        </a>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal  fade w-100" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content px-5">
+                                <div class="modal-header">
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body border-bottom">
+                                    <div class="d-flex justify-content-between align-items-center py-4 ps-2 gap-3">
+                                        <img src="img/logo/logo-ser.svg" alt="logo-ser" class="img-fluid">
+                                        <div class="form-group d-flex align-items-center w-100 rounded-3 bg-feel">
+                                            <img src="img/icons/serch.svg" alt="serch" class="">
+                                            <input type="text"
+                                                class="form-control modal-serch bg-feel border-0 fs-14 text-look fw-mont"
+                                                placeholder="Search products" [(ngModel)]="searchTerm"
+                                                (input)="searchProducts()" />
+                                            <img src="img/icons/exit-btn.svg" alt="serch" class="px-3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="side-bar py-3 p-3 border-end h-100">
+                                            <div
+                                                class="d-flex flex-column justify-content-center align-items-end gap-2">
+                                                @for(category of categories; track category){
+
+                                                <div class="py-3">
+
+                                                    <a class="fw-regular fs-14 text-look bg-feel py-3 px-4 rounded-3"
+                                                        (click)="selectCategory(category)" style="cursor:pointer">
+                                                        {{ category }}
+                                                    </a>
+
+                                                </div>
+
+                                                }
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="our-product py-3">
+                                            <div class="container">
+
+                                                <!-- <div class="row">
+
+                                                            <div class="col-lg-4 col-md-4 col-sm-6 py-3">
+                                                                <div class="card border-0 h-100">
+                                                                    <div
+                                                                        class="image p-5 bg-text rounded-4 position-relative">
+                                                                        <img src="img/landing/essential.png"
+                                                                            alt="essential" class="img-fluid ">
+                                                                        <div class="position-absolute"
+                                                                            style="top: 30px; inset-inline-start: 20px;">
+                                                                            <p
+                                                                                class="text-luci bg-fully px-3 py-2  rounded-2 fs-18 fw-regular">
+                                                                                Full Set</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <h2 class="py-3 fs-24 fw-regular">
+                                                                        The essential kit
+                                                                    </h2>
+                                                                    <p
+                                                                        class="pb-3 text-forth fs-20 fw-mont text-truncate">
+                                                                        The Two for all of your body skin care
+                                                                    </p>
+                                                                    <div
+                                                                        class="d-flex rounded-2 justify-content-between align-items-center border border-text-bord border-1 text-black p-2 py-3 hover-black-white">
+                                                                        <a href="#"
+                                                                            class="text-black fs-18 fw-regular ms-2">
+                                                                            Shop now
+                                                                        </a>
+                                                                        <p
+                                                                            class="p-0 m-0 text-sr d-flex justify-content-end align-items-center me-2">
+                                                                            <img src="img/icons/riyal.png" alt="riyal"
+                                                                                class="img-fluid" style="width: 25px;">
+                                                                            <span
+                                                                                class="text-sr fs-22 fw-regular">125</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-md-4 col-sm-6 py-3">
+                                                                <div class="card border-0 h-100">
+                                                                    <div
+                                                                        class="image p-5 bg-text rounded-4 position-relative">
+                                                                        <img src="img/landing/melting.png" alt="melting"
+                                                                            class="img-fluid ">
+                                                                        <div class="position-absolute"
+                                                                            style="top: 30px; inset-inline-start: 20px;">
+                                                                            <p
+                                                                                class="text-luci bg-fully px-3 py-2 rounded-2 fs-18 fw-regular">
+                                                                                Lucidity</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <h2 class="py-3 fs-24 fw-regular text-truncate">
+                                                                        Berry melting soap
+                                                                    </h2>
+                                                                    <p
+                                                                        class="pb-3 text-forth fs-20 fw-mont text-truncate">
+                                                                        The daily body soap
+                                                                    </p>
+                                                                    <div
+                                                                        class="d-flex rounded-2 justify-content-between align-items-center border border-text-bord border-1 text-black p-2 py-3 hover-black-white">
+                                                                        <a href="#"
+                                                                            class="text-black fs-18 fw-regular ms-2">
+                                                                            Shop now
+                                                                        </a>
+                                                                        <p
+                                                                            class="p-0 m-0 text-sr d-flex justify-content-end align-items-center me-2">
+                                                                            <img src="img/icons/riyal.png" alt="riyal"
+                                                                                class="img-fluid" style="width: 25px;">
+                                                                            <span
+                                                                                class="text-sr fs-22 fw-regular">99</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-md-4 col-sm-6 py-3">
+                                                                <div class="card border-0 h-100">
+                                                                    <div
+                                                                        class="image p-5 bg-text rounded-4 position-relative">
+                                                                        <img src="img/landing/Clea.png" alt="melting"
+                                                                            class="img-fluid ">
+                                                                        <div class="position-absolute"
+                                                                            style="top: 30px; inset-inline-start: 25px;">
+                                                                            <p
+                                                                                class="text-luci bg-fully px-3 py-2 rounded-2 fs-18 fw-regular">
+                                                                                Bright</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <h2 class="py-3 fs-24 fw-regular text-truncate">
+                                                                        Clea white cream
+                                                                    </h2>
+                                                                    <p
+                                                                        class="pb-3 text-forth fs-20 fw-mont text-truncate">
+                                                                        All day whitening body mask cream
+                                                                    </p>
+                                                                    <div
+                                                                        class="d-flex rounded-2 justify-content-between align-items-center border border-text-bord border-1 text-black p-2 py-3 hover-black-white">
+                                                                        <a href="#"
+                                                                            class="text-black fs-18 fw-regular ms-2">
+                                                                            Shop now
+                                                                        </a>
+                                                                        <p
+                                                                            class="p-0 m-0 text-sr d-flex justify-content-end align-items-center me-2">
+                                                                            <img src="img/icons/riyal.png" alt="riyal"
+                                                                                class="img-fluid" style="width: 25px;">
+                                                                            <span
+                                                                                class="text-sr fs-22 fw-regular">105</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div> -->
+
+
+
+                                                <div class="row">
+
+                                                    @for (product of filteredProducts.slice(0, 3); track product.id) {
+
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 py-4">
+
+                                                        <div class="card border-0 h-100">
+
+                                                            <div class="image p-5 bg-text rounded-4 position-relative">
+
+                                                                <img [src]="product.image"
+                                                                    class="img-fluid product-img" />
+
+                                                                <div class="position-absolute"
+                                                                    style="top: 22px; inset-inline-start: 20px;">
+                                                                    <span
+                                                                        class="bg-fully text-luci px-4 py-2 rounded-2 fs-14">
+                                                                        {{ product.category }}
+                                                                    </span>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="d-flex flex-column gap-3 py-4">
+
+                                                                <h2 class="fs-24 fw-regular text-truncate"
+                                                                    (click)="navigateToProduct(product.id)">
+                                                                    {{ product.title }}
+                                                                </h2>
+
+                                                                <p class="text-forth fs-20 fw-mont text-truncate">
+                                                                    {{ product.description }}
+                                                                </p>
+
+                                                            </div>
+
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center border p-2 py-3 hover-black-white">
+
+                                                                <a href="#" class="text-black fs-18 fw-regular ms-2">
+                                                                    Shop now
+                                                                </a>
+
+                                                                <p class="p-0 m-0 d-flex align-items-center me-2">
+                                                                    <span class="fs-22 fw-regular">
+                                                                        {{ product.price }}
+                                                                    </span>
+                                                                    <img src="img/icons/riyal.png" style="width: 25px;">
+                                                                </p>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    }
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                     <div class="dropdown " *ngIf="loginin">
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="">
+                                <img src="img/landing/profile.png" alt="profile">
+                            </a>
+                            <ul class="dropdown-menu profile dropdown-menu-end media-dropdown text-center mt-4 mx-auto">
+                                <div class="d-flex gap-2 p-3 align-items-center">
+                                    <img src="img/landing/person.png" alt="person">
+                                    <div class="text-drop px-2 m-0 p-0 d-flex flex-column align-items-start">
+                                        <h2 class="fs-24 fw-regular text-look">Ahmed Alaa</h2>
+                                        <span class="fw-mont fs-14 mb-4 text-look">zyadaahmed959@gmail.com</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column gap-1 justify-contant-start">
+                                    <a  (click)="goToOrders()" class="d-inline-flex gap-3 px-3 mx-3 border-bottom py-2 pb-2 fw-regular fs-14 text-look align-items-center">
+                                        <img src="img/icons/user.svg" alt="users">
+                                        order
+                                    </a>
+                                    <a (click)="goTmyprofile()" class="d-inline-flex gap-3 px-3 mx-3 border-bottom py-2 pb-2 fw-regular fs-14 text-look align-items-center">
+                                        <img src="img/icons/order-ord.jfif" alt="users" style="width: 24px;">
+                                        My Profile
+                                    </a>
+                                    <a (click)="logout()" class="d-inline-flex gap-3 px-3 mx-3 py-2 fw-regular fs-14 text-look align-items-center">
+                                        <img src="img/icons/logaut.svg" alt="Notification ">
+                                        log out
+                                    </a>
+                                </div>
+                            </ul>
+                        </div>
+                    <ul class="navbar-nav d-flex flex-row">
+                        <li class="nav-item text-light" *ngIf="!loginin">
+                            <a class="nav-link text-third fs-18 fw-regular" routerLink="/login">Log in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-third fs-18 fw-regular" data-bs-toggle="offcanvas"
+                                href="#offcanvasExample" role="button" aria-controls="offcanvasExample">cart
+                            (<span
+                                class="px-1 m-0 mt-2 fs-14"> {{ cartItems.length }}</span>)    
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="btn-group">
+                        <button type="button" class=" btn p-1 pb-2 border-0" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="img/icons/Flags.svg" alt="eng" class="img-fluid">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <div class="d-flex flex-column gap-1 justify-contant-start">
+                                <li><a class="d-inline-flex gap-3 px-3 border-bottom dropdown-item text-third fs-18 fw-regular"
+                                        href="#">
+                                        <img src="img/icons/Flags.svg" alt="eng" class="img-fluid">
+                                        English</a></li>
+                                <li><a class="d-inline-flex gap-3 px-3 dropdown-item text-third fs-18 fw-regular"
+                                        href="#">
+                                        <img src="img/icons/flag_sudia.png" alt="Ar" class="img-fluid">
+                                        Arabic</a></li>
+                            </div>
+
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+</div>
+<!-------nav------->
+
+
+
+<!---offcanvas--->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header py-4">
+        <h5 class="offcanvas-title fs-24 fw-regular text-look" id="offcanvasExampleLabel">Your cart: {{ cartItems.length
+            }} </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="sebrate my-1 w-100 px-3">
+        <div class="bg-secondary rounded-3 w-100">
+            <div class="w-75 h-100 bg-black rounded-3"></div>
+        </div>
+        <p class=" mt-2 text-look fs-14 fw-mont">26sr away from Free Shipping and Samples!</p>
+    </div>
+    <div class="offcanvas-body h-100">
+        <div class="py-3 mt-3">
+            @for(item of cartItems; track item.id){
+
+            <div class="d-flex align-items-center justify-content-between border-bottom">
+
+                <div class="d-flex gap-3 align-items-center">
+
+                    <img [src]="item.image" class="border border-canv rounded-3 px-2 py-3"
+                        style="width:80px;height:80px;object-fit:contain">
+
+                    <div class="d-flex flex-column justify-content-center">
+
+                        <p class="fs-16 fw-regular text-bery">
+                            {{ item.title }}
+                        </p>
+
+
+                        <div class="number-input  mb-3 border border-canv">
+                            <button (click)="decreaseQuantity(item.id)">−</button>
+
+                            <span>{{ item.quantity }}</span>
+
+                            <button (click)="increaseQuantity(item.id)">+</button>
+                        </div>
+                        <div class="text-decoration-underline" style="cursor:pointer" (click)="removeItem(item.id)">
+                            remove
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="price py-2">
+                    <span class="text-perf fs-16 fw-regular">
+                        {{ item.price }}
+                    </span>
+
+                    <img src="img/icons/riyal.png" class="img-fluid" style="width:25px">
+                </div>
+
+            </div>
+
+            }
+
+           
+
+
+            <div class="py-3 d-flex rounded-2 justify-content-between align-items-center  text-black p-2 ">
+                <a href="#" class="text-black fs-18 fw-regular ms-2">
+                    Subtotal
+                </a>
+                <p class="p-0 m-0 text-sr d-flex justify-content-end align-items-center me-2">
+                    <span class="text-sr fs-22 fw-regular">
+                        {{ subtotal }}
+                    </span>
+                    <img src="img/icons/riyal.png" alt="riyal" class="img-fluid" style="width: 25px;">
+                </p>
+            </div>
+            <div class="py-4">
+                <a class="d-block bg-black py-3 px-4 rounded-2 text-white w-100 text-center" style="cursor: pointer;"
+                    (click)="goToCart()">
+                    Checkout
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!---offcanvas--->
