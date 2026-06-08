@@ -145,8 +145,8 @@ goToOrders() {
 goTmyprofile() {
   this.router.navigate(['/Myprofile']);
 }
-logout(){
+logout() {
   this.authservice.logout();
-   this.router.navigate(['/']);
+  window.location.href = '/';
 }
 }

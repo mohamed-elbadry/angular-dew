@@ -1,33 +1,88 @@
+// import { Injectable } from '@angular/core';
+// import { HttpClient } from '@angular/common/http';
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class ProductsService {
+//   constructor(private http: HttpClient) {}
+//   getProducts() {
+//     return this.http.get('https://fakestoreapi.com/products');
+//   }
+//   getProductById(id: number) {
+//     return this.http.get(`https://fakestoreapi.com/products/${id}`);
+//   }
+//   // جميع الكاتيجوريز
+//   getCategories() {
+//     return this.http.get<string[]>(
+//       'https://fakestoreapi.com/products/categories'
+//     );
+//   }
+//   // منتجات كاتيجوري معينة
+//   getProductsByCategory(category: string) {
+//     return this.http.get(
+//       `https://fakestoreapi.com/products/category/${category}`
+//     );
+//   }
+//   login(username: string, password: string) {
+//   return this.http.post('https://fakestoreapi.com/auth/login', {
+//     username,
+//     password
+//   });
+// }
+// }
+
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { shareReplay } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
+
+  private products$!: Observable<any>;
+
   constructor(private http: HttpClient) {}
+
   getProducts() {
-    return this.http.get('https://fakestoreapi.com/products');
+
+    if (!this.products$) {
+      this.products$ = this.http
+        .get('https://fakestoreapi.com/products')
+        .pipe(
+          shareReplay(1)
+        );
+    }
+
+    return this.products$;
   }
+
   getProductById(id: number) {
     return this.http.get(`https://fakestoreapi.com/products/${id}`);
   }
-  // جميع الكاتيجوريز
+
   getCategories() {
     return this.http.get<string[]>(
       'https://fakestoreapi.com/products/categories'
     );
   }
-  // منتجات كاتيجوري معينة
+
   getProductsByCategory(category: string) {
     return this.http.get(
       `https://fakestoreapi.com/products/category/${category}`
     );
   }
+
   login(username: string, password: string) {
-  return this.http.post('https://fakestoreapi.com/auth/login', {
-    username,
-    password
-  });
-}
+    return this.http.post(
+      'https://fakestoreapi.com/auth/login',
+      {
+        username,
+        password
+      }
+    );
+  }
 }
