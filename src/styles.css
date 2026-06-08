@@ -529,32 +529,29 @@ input:focus {
   color: #212529 !important;
   border: 1px solid #212529;
 }
-.number-input {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: transparent !important;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
 }
-
-.number-input button {
-  width: 28px;
-  height: 28px;
-  border: 1px solid #ddd;
-  background: white;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 0;
-
-  padding: 0;
-}
-
-.number-input span {
-  min-width: 20px;
-  text-align: center;
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: transparent !important;
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 .fw-regular {
   font-family: var(--font-regular);

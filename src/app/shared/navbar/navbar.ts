@@ -51,7 +51,9 @@ loginin:boolean=false;
      this.cartService.cartItems$.subscribe(items => {
     this.cartItems = items;
   });
-this.loginin=this.authservice.isLoggedIn();
+  this.authservice.isLoggedIn$.subscribe(status => {
+    this.loginin = status;
+  });
   }
 
   selectCategory(category: string) {
@@ -147,6 +149,5 @@ goTmyprofile() {
 }
 logout() {
   this.authservice.logout();
-  window.location.href = '/';
 }
 }
