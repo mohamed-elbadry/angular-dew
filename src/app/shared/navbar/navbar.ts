@@ -96,29 +96,18 @@ loginin:boolean=false;
   );
 
 }
+
 goToCart() {
-  const offcanvasElement = document.getElementById('offcanvasExample');
+  (window as any).bootstrap.Offcanvas.getOrCreateInstance(
+    document.getElementById('offcanvasExample')
+  )?.hide();
 
-  if (offcanvasElement) {
-    const offcanvas =
-      (window as any).bootstrap.Offcanvas.getOrCreateInstance(
-        offcanvasElement
-      );
+  (window as any).bootstrap.Collapse.getOrCreateInstance(
+    document.getElementById('navbarNav')
+  )?.hide();
 
-    offcanvas.hide();
-
-    offcanvasElement.addEventListener(
-      'hidden.bs.offcanvas',
-      () => {
-        this.router.navigate(['/cart']);
-      },
-      { once: true }
-    );
-  } else {
-    this.router.navigate(['/cart']);
-  }
+  this.router.navigate(['/cart']);
 }
-
 
 increaseQuantity(id: number) {
   this.cartService.increaseQuantity(id);

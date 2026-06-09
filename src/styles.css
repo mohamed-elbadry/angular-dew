@@ -971,8 +971,10 @@ input:focus {
     position: relative;
     display: flex;
     flex: auto;
-    transform: translateX(100%) !important;
+    transform: translateX(0%) !important;
     z-index: 4;
+    left: auto !important;
+        right: 20px;
   }
 
   .vh-100 {
