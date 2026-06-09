@@ -355,6 +355,10 @@ body {
   height: 450px;
   object-fit: contain;
 }
+.w-300{
+  width: 100%;
+  max-width: 300px;
+}
 .w-327 {
    width: 100%;
   max-width: 327px;
