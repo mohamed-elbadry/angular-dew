@@ -971,8 +971,7 @@ input:focus {
     position: relative;
     display: flex;
     flex: auto;
-    right: 0px !important;
-    transform: translateX(50px) !important;
+    transform: translateX(100%) !important;
     z-index: 4;
   }
 
