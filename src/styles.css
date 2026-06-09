@@ -356,7 +356,8 @@ body {
   object-fit: contain;
 }
 .w-327 {
-  width: 327px;
+   width: 100%;
+  max-width: 327px;
 }
 .w-538 {
   width: 538px;
@@ -1113,10 +1114,7 @@ input:focus {
     width: 75% !important;
   }
 
-  .w-327 {
-    width: 300px;
-  }
-
+   
   .pad-100 {
     padding-bottom: 0px;
     padding-right: 0px;

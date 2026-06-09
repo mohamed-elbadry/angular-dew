@@ -6,7 +6,7 @@
                 <div class="col-md-6 col-12">
                     <div class="essential d-flex flex-column mt-sm-5 pt-sm-5 mt-4  ps-xl-3 h-100 w-100">
                         <div class="mt-sm-5 ">
-                            <p class="fs-42 fw-regular text-black mb-3 "
+                            <p class="fs-42 fw-regular text-black mb-3 flex-wrap"
                                 (click)="navigateToProduct(featuredProduct.id)">{{ featuredProduct?.title }}</p>
                             <a (click)="navigateToProduct(featuredProduct.id)"
                                 class=" fs-21 d-inline-flex justify-content-center align-items-center border border-text-black border-1 text-black rounded-2 fw-regular py-2 px-5 align-self-start hover-black-white">Shop
@@ -211,18 +211,18 @@
 
                         <img src="img/icons/heart.svg" alt="heart" class="heart img-fluid" style="width:60px;">
 
-                        <h3 class="pb-3 fw-regular fs-36 text-sr" style="cursor: pointer;"
+                        <h3 class="pb-3 fw-regular fs-36 text-sr flex-wrap" style="cursor: pointer;"
                             (click)="navigateToProduct(featuredProduct.id)">
 
                             {{ truncateTitle(featuredProduct?.title) }}
 
                         </h3>
 
-                        <h4 class="pb-3 fw-regular fs-24 text-main lin-120">
+                        <h4 class="pb-3 fw-regular fs-24 text-main lin-120 flex-wrap">
                             {{ featuredProduct?.category }}
                         </h4>
 
-                        <p class="pb-3 fw-mont fs-22 lin-18">
+                        <p class="pb-3 fw-mont fs-22 lin-18 flex-wrap">
                             {{ featuredProduct?.description }}
                         </p>
 
@@ -260,8 +260,7 @@
             <h3 class="fw-regular fs-36 mb-4 py-4">Our Products</h3>
         </div>
         <div id="Products img">
-            <swiper-container #swiper space-between="25" loop="true" autoplay-delay="2000"
-                  [breakpoints]="{
+            <swiper-container #swiper space-between="25" loop="true" autoplay-delay="2000" [breakpoints]="{
     '576': { slidesPerView: 1 },
     '768': { slidesPerView: 3 },
     '992': { slidesPerView: 2 },
@@ -276,7 +275,7 @@
         </div>
 
 
-        
+
     </div>
 </section>
 <!-- End Products -->
@@ -375,8 +374,8 @@
         <div class="d-flex">
             <h3 class="happy fw-regular fs-36 text-look mb-5">Our happy customer</h3>
         </div>
-        <swiper-container  space-between="15" pagination="false" autoplay="true"
-            autoplay-delay="3000" loop="true" [breakpoints]="{
+        <swiper-container space-between="15" pagination="false" autoplay="true" autoplay-delay="3000" loop="true"
+            [breakpoints]="{
     '576': { slidesPerView: 2 },
     '768': { slidesPerView: 3 },
     '992': { slidesPerView: 3 },
