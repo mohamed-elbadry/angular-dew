@@ -20,7 +20,7 @@
     <nav class=" navbar navbar-expand-lg py-3 px-xl-4 px-lg-3 bg-secound rounded-top-4">
         <div class="container-fluid">
             <a class="navbar-brand postion-brand translate-middle-x start-50 mx-0 align-items-center position-absolute"
-               routerLink="/">
+               (click)="goToPage('/')">
                 <img src="img/logo/logo.svg" alt="" class="img-fluid" width="100">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -30,13 +30,13 @@
             <div class="collapse navbar-collapse justify-content-between  " id="navbarNav">
                 <ul class="navbar-nav d-flex justify-content-right text-right">
                     <li class="nav-item text-light">
-                        <a class="nav-link text-third fs-18 fw-regular" routerLink="/about">About</a>
+                        <a class="nav-link text-third fs-18 fw-regular" (click)="goToPage('/about')">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-third fs-18 fw-regular" routerLink="/shop">Shop</a>
+                        <a class="nav-link text-third fs-18 fw-regular" (click)="goToPage('/shop')">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-third fs-18 fw-regular" routerLink="/skin">Skin</a>
+                        <a class="nav-link text-third fs-18 fw-regular" (click)="goToPage('/skin')">Skin</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link text-third fs-18 fw-regular" routerLink="/product">Product</a>
@@ -313,7 +313,7 @@
                         </div>
                     <ul class="navbar-nav d-flex flex-row">
                         <li class="nav-item text-light" *ngIf="!loginin">
-                            <a class="nav-link text-third fs-18 fw-regular" routerLink="/login">Log in</a>
+                            <a class="nav-link text-third fs-18 fw-regular" (click)="goToPage('/login')">Log in</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-third fs-18 fw-regular" data-bs-toggle="offcanvas"

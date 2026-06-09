@@ -364,7 +364,8 @@ body {
   max-width: 327px;
 }
 .w-538 {
-  width: 538px;
+  width: 100%;
+  max-width: 538px;
 }
 .w-610{
   width: 610px;
@@ -998,7 +999,11 @@ input:focus {
   .image-land {
     object-fit: fill;
   }
-
+.dropdown-menu{
+  top: 100% !important;
+    left: -290px !important;
+    margin-top: var(--bs-dropdown-spacer);
+}
   .img-h200 {
     height: 200px;
     object-fit: cover;
@@ -1211,7 +1216,11 @@ transform: translateX(50%) !important;
     left: -242px !important;
 }
 }
-
+.dropdown-menu{
+  top: 100% !important;
+    left: -290px !important;
+    margin-top: var(--bs-dropdown-spacer);
+}
 
 
 

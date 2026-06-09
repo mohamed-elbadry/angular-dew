@@ -139,4 +139,29 @@ goTmyprofile() {
 logout() {
   this.authservice.logout();
 }
+ngAfterViewInit() {
+  const collapseEl = document.getElementById('navbarNav');
+  const icon = document.getElementById('togglicon') as HTMLImageElement;
+
+  if (!collapseEl || !icon) return;
+
+  collapseEl.addEventListener('show.bs.collapse', () => {
+    icon.src = 'img/icons/close.svg';
+  });
+
+  collapseEl.addEventListener('hide.bs.collapse', () => {
+    icon.src = 'img/icons/menu.svg';
+  });
+}
+goToPage(route: string) {
+  const navbar = document.getElementById('navbarNav');
+  const collapse = (window as any).bootstrap.Collapse.getOrCreateInstance(navbar);
+
+  collapse.hide();
+
+  // نستنى شوية عشان الأنيميشن
+  setTimeout(() => {
+    this.router.navigate([route]);
+  }, 200);
+}
 }
